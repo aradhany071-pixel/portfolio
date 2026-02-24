@@ -1,0 +1,103 @@
+/* --- ANIMATIONS --- */
+
+/* Smooth entry animation for sections */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Continuous horizontal scrolling for the Credentials marquee */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- MARQUEE SYSTEM --- */
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: marquee 40s linear infinite;
+}
+
+/* Pause marquee on hover for better readability */
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+/* --- CUSTOM SCROLLBARS --- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FDFCF0;
+}
+
+/* Dark mode scrollbar track */
+.dark ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #E5E4D5;
+    border-radius: 10px;
+}
+
+/* Dark mode scrollbar handle */
+.dark ::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+/* --- DARK MODE NEON GLOWS --- */
+
+/* Apply a glowing effect to the background doodles in dark mode */
+.dark .doodle-glow {
+    filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 15px currentColor);
+}
+
+/* --- LAYOUT UTILITIES --- */
+
+/* Hide scrollbar utility for marquee while maintaining functionality */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Global color and background transitions for smooth theme switching */
+.transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aradhana | Personal Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: '#800020',
+                        lavender: '#9575CD',
+                        richGreen: '#1B5E20',
+                        darkBrown: '#3E2723',
+                        neonBurgundy: '#FF2D55',
+                        neonGreen: '#00FF9D',
+                        neonLavender: '#BC00FF',
+                        neonAmber: '#FFCC00'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="transition-colors duration-500">
+    <div id="app-root"
+        class="min-h-screen bg-[#FDFCF0] dark:bg-[#0A0A0A] text-[#5D5C55] dark:text-gray-300 font-sans selection:bg-purple-100 dark:selection:bg-burgundy/30 relative overflow-hidden">
+
+        <div id="doodle-container" class="fixed inset-0 pointer-events-none z-0"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 py-12">
+            <!-- Navigation -->
+            <header class="flex justify-between items-center mb-24 animate-fade-in">
+                <div
+                    class="text-xl font-bold tracking-tighter hover:scale-105 transition-transform cursor-default dark:text-white">
+                    A.</div>
+                <div class="flex items-center gap-6">
+                    <nav
+                        class="hidden md:flex gap-10 text-xs font-bold uppercase tracking-widest opacity-60 dark:opacity-40">
+                        <a href="#about" class="hover:opacity-100 transition-opacity hover:text-burgundy">About</a>
+                        <a href="#skills" class="hover:opacity-100 transition-opacity hover:text-richGreen">Skills</a>
+                        <a href="#certs" class="hover:opacity-100 transition-opacity hover:text-lavender">Certs</a>
+                        <a href="#works" class="hover:opacity-100 transition-opacity hover:text-darkBrown">Works</a>
+                        <a href="#contact" class="hover:opacity-100 transition-opacity hover:text-burgundy">Contact</a>
+                    </nav>
+                    <button id="theme-toggle"
+                        class="p-3 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 shadow-sm hover:shadow-md transition-all active:scale-95 text-gray-400 dark:text-yellow-400">
+                        <i data-lucide="moon" class="dark:hidden"></i>
+                        <i data-lucide="sun" class="hidden dark:block"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="flex flex-col md:flex-row items-center gap-12 mb-40 animate-fade-in">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-2 bg-gradient-to-tr from-purple-200 via-green-100 to-red-100 dark:from-burgundy/20 dark:via-purple-900/10 dark:to-blue-900/10 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity duration-700 animate-pulse">
+                    </div>
+                    <div
+                        class="w-60 h-60 md:w-72 md:h-72 rounded-full border-8 border-white dark:border-white/5 shadow-2xl flex-shrink-0 relative z-10 bg-[#800020] flex items-center justify-center transition-all duration-500 hover:scale-[1.02]">
+                        <i data-lucide="user" class="w-20 h-20 text-white opacity-20" stroke-width="1"></i>
+                    </div>
+                </div>
+                <div class="text-center md:text-left flex-1">
+                    <h1
+                        class="text-6xl md:text-8xl font-bold text-gray-800 dark:text-white mb-6 tracking-tighter leading-none">
+                        Hi, I'm <span
+                            class="text-[#800020] dark:text-[#FF2D55] transition-colors duration-500">Aradhana</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-500 dark:text-gray-400 leading-relaxed max-w-lg font-light">
+                        A minimalist designer and creative developer focused on building <span
+                            class="text-gray-800 dark:text-gray-200 font-normal">refined, tranquil</span> digital
+                        experiences.
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-10" id="social-icons"></div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="mb-40 grid md:grid-cols-3 gap-12 items-start">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-px w-8 bg-[#800020] dark:bg-[#FF2D55]"></div>
+                        <span
+                            class="text-xs font-bold uppercase tracking-[0.3em] text-[#800020] dark:text-[#FF2D55]">Identity</span>
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-800 dark:text-white tracking-tight">About Me</h2>
+                </div>
+                <div class="md:col-span-2">
+                    <div
+                        class="bg-[#FFF5F5] dark:bg-red-950/30 p-8 md:p-12 rounded-[3rem] border border-red-100 dark:border-red-900/40 shadow-sm transition-colors duration-500">
+                        <p class="text-xl leading-relaxed text-gray-600 dark:text-gray-400 font-light">
+                            I’m <span
+                                class="text-[#800020] dark:text-[#FF2D55] font-medium transition-colors duration-500">Aradhana</span>,
+                            a designer and frontend developer specializing in crafting interfaces that feel as good as
+                            they look. I believe digital experiences should be <span class="italic">intuitive,
+                                unobtrusive, and visually calming</span>.
+                        </p>
+                        <p class="text-xl leading-relaxed text-gray-600 dark:text-gray-400 font-light mt-6">
+                            With a strong focus on frontend development and visual design, I seamlessly bridge
+                            aesthetics and performance to create thoughtful, memorable user journeys.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Capabilities Section (Updated for Java) -->
+            <section id="skills" class="mb-40">
+                <div class="flex items-center gap-3 mb-12">
+                    <div class="h-px w-8 bg-[#1B5E20] dark:bg-[#00FF9D]"></div>
+                    <span
+                        class="text-xs font-bold uppercase tracking-[0.3em] text-[#1B5E20] dark:text-[#00FF9D]">Capabilities</span>
+                </div>
+                <!-- Grid changed to 4 columns to include Java -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="bg-red-50/50 dark:bg-red-950/20 p-6 rounded-[2rem] text-center font-bold text-xs uppercase tracking-widest border border-white dark:border-white/5 shadow-sm text-[#800020] dark:text-[#FF2D55]">
+                        UI/UX Design</div>
+                    <div
+                        class="bg-green-50/50 dark:bg-green-950/20 p-6 rounded-[2rem] text-center font-bold text-xs uppercase tracking-widest border border-white dark:border-white/5 shadow-sm text-[#1B5E20] dark:text-[#00FF9D]">
+                        Semantic Web</div>
+                    <div
+                        class="bg-purple-50/50 dark:bg-purple-950/20 p-6 rounded-[2rem] text-center font-bold text-xs uppercase tracking-widest border border-white dark:border-white/5 shadow-sm text-[#9575CD] dark:text-[#BC00FF]">
+                        DOM Manipulation</div>
+                    <!-- ADDED: Java Capability -->
+                    <div
+                        class="bg-blue-50/50 dark:bg-blue-950/20 p-6 rounded-[2rem] text-center font-bold text-xs uppercase tracking-widest border border-white dark:border-white/5 shadow-sm text-[#1e40af] dark:text-[#60a5fa]">
+                        Java Development</div>
+                </div>
+            </section>
+
+            <!-- Credentials Section -->
+            <section id="certs" class="mb-40 overflow-hidden">
+                <div class="flex items-center gap-3 mb-12">
+                    <div class="h-px w-8 bg-[#9575CD] dark:bg-[#BC00FF]"></div>
+                    <span
+                        class="text-xs font-bold uppercase tracking-[0.3em] text-[#9575CD] dark:text-[#BC00FF]">Credentials</span>
+                </div>
+                <div class="relative w-full">
+                    <div class="marquee-container overflow-hidden">
+                        <div class="marquee-content py-4" id="marquee-list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Works Section -->
+            <section id="works" class="mb-40">
+                <div class="flex justify-between items-end mb-16">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="h-px w-8 bg-[#3E2723] dark:bg-white/20"></div>
+                            <span
+                                class="text-xs font-bold uppercase tracking-[0.3em] text-[#3E2723] dark:text-white/40">Works</span>
+                        </div>
+                        <h2 class="text-5xl font-bold text-gray-800 dark:text-white tracking-tight">Selected Works</h2>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12" id="works-grid"></div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="mb-40">
+                <div class="max-w-2xl mx-auto text-center mb-16">
+                    <div class="flex items-center justify-center gap-3 mb-4">
+                        <div class="h-px w-8 bg-[#800020] dark:bg-[#FF2D55]"></div>
+                        <span
+                            class="text-xs font-bold uppercase tracking-[0.3em] text-[#800020] dark:text-[#FF2D55]">Dialogue</span>
+                    </div>
+                    <h2 class="text-5xl font-bold text-gray-800 dark:text-white mb-6">Let's connect</h2>
+                    <p class="text-lg text-gray-400 font-light">Have an idea or just want to chat? My inbox is always
+                        open.</p>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#111111] p-10 md:p-16 rounded-[3rem] shadow-2xl shadow-gray-200/50 dark:shadow-none border border-white dark:border-white/10 max-w-3xl mx-auto">
+                    <form id="contact-form" class="space-y-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-3">
+                                <label
+                                    class="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-2">Name</label>
+                                <input required type="text"
+                                    class="w-full p-5 rounded-3xl bg-[#F9F9F9] dark:bg-white/5 border-none focus:ring-4 focus:ring-purple-100 dark:focus:ring-neonBurgundy/20 transition-all text-gray-700 dark:text-white placeholder:text-gray-300 dark:placeholder:text-gray-600"
+                                    placeholder="Your name">
+                            </div>
+                            <div class="space-y-3">
+                                <label
+                                    class="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-2">Email</label>
+                                <input required type="email"
+                                    class="w-full p-5 rounded-3xl bg-[#F9F9F9] dark:bg-white/5 border-none focus:ring-4 focus:ring-purple-100 dark:focus:ring-neonBurgundy/20 transition-all text-gray-700 dark:text-white placeholder:text-gray-300 dark:placeholder:text-gray-600"
+                                    placeholder="your@email.com">
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label
+                                class="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-2">Message</label>
+                            <textarea required rows="5"
+                                class="w-full p-5 rounded-3xl bg-[#F9F9F9] dark:bg-white/5 border-none focus:ring-4 focus:ring-neonBurgundy/20 transition-all text-gray-700 dark:text-white placeholder:text-gray-300 dark:placeholder:text-gray-600 resize-none"
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="group relative w-full p-5 bg-gray-900 dark:bg-white text-white dark:text-black rounded-3xl font-bold overflow-hidden transition-all hover:shadow-xl active:scale-95">
+                            <span class="relative z-10 flex items-center justify-center gap-2">Send Inquiry <i
+                                    data-lucide="send" class="w-4 h-4"></i></span>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-[#800020] to-[#9575CD] dark:from-[#FF2D55] dark:to-[#BC00FF] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center pb-20 border-t border-gray-100 dark:border-white/5 pt-20">
+                <div class="flex flex-col items-center gap-6 mb-12">
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Quick Contact</h3>
+                    <a href="#"
+                        class="text-lg text-[#800020] dark:text-[#FF2D55] hover:underline decoration-purple-200 dark:decoration-burgundy underline-offset-8 transition-all">Connect
+                        with me</a>
+                    <div class="flex justify-center gap-6" id="footer-socials"></div>
+                </div>
+                <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-gray-300 dark:text-gray-600">
+                    &copy; <span id="year"></span> <span class="text-gray-400 dark:text-gray-500">Aradhana</span>
+                    &mdash; Built with Intent
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
