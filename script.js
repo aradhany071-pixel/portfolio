@@ -12,13 +12,13 @@ form.addEventListener("submit", async (e) => {
     message: form.message.value
   };
 
-  const btn = form.querySelector("button");
-  btn.innerText = "Sending...";
-  btn.disabled = true;
-
   try {
-    // ✅ Formspree email
-    await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    const btn = form.querySelector("button");
+    btn.innerText = "Sending...";
+    btn.disabled = true;
+
+    // ✅ FORM SPREE (EMAIL)
+    await fetch("https://formspree.io/f/xnjopoll", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -26,8 +26,8 @@ form.addEventListener("submit", async (e) => {
       body: JSON.stringify(formData)
     });
 
-    // ✅ MySQL save
-    await fetch("http://127.0.0.1:5000/contact", {
+    // ✅ MYSQL (LOCAL ONLY)
+    await fetch("http://localhost:5000/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -35,13 +35,14 @@ form.addEventListener("submit", async (e) => {
       body: JSON.stringify(formData)
     });
 
-    responseMsg.innerText = `✅ Thank you ${name}! Message sent & saved.`;
+    responseMsg.innerText = `✅ Thank you ${name}, message sent successfully!`;
     form.reset();
 
   } catch (err) {
     console.error(err);
     responseMsg.innerText = "❌ Error sending message";
   } finally {
+    const btn = form.querySelector("button");
     btn.innerText = "Send Message";
     btn.disabled = false;
   }
