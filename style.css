@@ -1,100 +1,90 @@
+/* RESET */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+  font-family:'Poppins', sans-serif;
 }
 
+/* BODY */
 body{
-  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
-  color:#3b2f63;
+  background: linear-gradient(135deg, #f3f4ff, #e9e7ff);
+  color:#2c2c54;
   text-align:center;
-}
-
-header{
-  padding:60px 20px;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(8px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
-}
-
-.title{
-  font-size:36px;
-  color:#6d5bd0;
-}
-
-.subtitle{
-  margin-top:10px;
-  color:#6b5ca5;
-}
-
-section{
-  width:85%;
-  max-width:800px;
-  margin:50px auto;
-  padding:40px;
-  background:white;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
-}
-
-h2{
-  color:#6d5bd0;
-  margin-bottom:20px;
-}
-
-.project-card{
-  background:#f3f0ff;
   padding:20px;
-  margin-top:15px;
-  border-radius:15px;
+}
+
+/* HEADER */
+h1{
+  font-size:40px;
+  color:#6c5ce7;
+  margin-bottom:10px;
+}
+
+p{
+  color:#636e72;
+  margin-bottom:30px;
+}
+
+/* SECTION CARD */
+form{
+  background:white;
+  max-width:400px;
+  margin:auto;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
   transition:0.3s;
-  border-left:4px solid #8b7cf6;
 }
 
-.project-card:hover{
+form:hover{
   transform:translateY(-5px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
+/* INPUT FIELDS */
 input, textarea{
-  width:80%;
+  width:100%;
   padding:12px;
-  border-radius:8px;
-  border:1px solid #d6d0ff;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid #dcd6ff;
   background:#faf9ff;
+  outline:none;
+  transition:0.3s;
 }
 
+input:focus, textarea:focus{
+  border-color:#6c5ce7;
+  box-shadow:0 0 5px rgba(108,92,231,0.3);
+}
+
+/* TEXTAREA */
 textarea{
   height:100px;
   resize:none;
 }
 
+/* BUTTON */
 button{
-  padding:10px 25px;
+  margin-top:15px;
+  padding:12px 25px;
   border:none;
-  border-radius:20px;
-  background:#8b7cf6;
+  border-radius:25px;
+  background:linear-gradient(135deg, #6c5ce7, #a29bfe);
   color:white;
+  font-size:16px;
   cursor:pointer;
   transition:0.3s;
-  font-weight:500;
 }
 
 button:hover{
-  background:#6d5bd0;
   transform:scale(1.05);
+  background:linear-gradient(135deg, #5a4fcf, #8f87ff);
 }
 
+/* RESPONSE MESSAGE */
 #response{
-  margin-top:10px;
-  color:#6d5bd0;
+  margin-top:15px;
   font-weight:500;
-}
-
-footer{
-  margin-top:40px;
-  padding:20px;
-  background:#e9e5ff;
-  color:#4b3f8f;
+  color:#6c5ce7;
 }
