@@ -1,103 +1,100 @@
-/* --- ANIMATIONS --- */
-
-/* Smooth entry animation for sections */
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-/* Continuous horizontal scrolling for the Credentials marquee */
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
+body{
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  color:#3b2f63;
+  text-align:center;
 }
 
-.animate-fade-in {
-    animation: fade-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+header{
+  padding:60px 20px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* --- MARQUEE SYSTEM --- */
-
-.marquee-container {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+.title{
+  font-size:36px;
+  color:#6d5bd0;
 }
 
-.marquee-content {
-    display: inline-flex;
-    animation: marquee 40s linear infinite;
+.subtitle{
+  margin-top:10px;
+  color:#6b5ca5;
 }
 
-/* Pause marquee on hover for better readability */
-.marquee-content:hover {
-    animation-play-state: paused;
+section{
+  width:85%;
+  max-width:800px;
+  margin:50px auto;
+  padding:40px;
+  background:white;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
 }
 
-/* --- CUSTOM SCROLLBARS --- */
-
-html {
-    scroll-behavior: smooth;
+h2{
+  color:#6d5bd0;
+  margin-bottom:20px;
 }
 
-::-webkit-scrollbar {
-    width: 8px;
+.project-card{
+  background:#f3f0ff;
+  padding:20px;
+  margin-top:15px;
+  border-radius:15px;
+  transition:0.3s;
+  border-left:4px solid #8b7cf6;
 }
 
-::-webkit-scrollbar-track {
-    background: #FDFCF0;
+.project-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* Dark mode scrollbar track */
-.dark ::-webkit-scrollbar-track {
-    background: #0A0A0A;
+input, textarea{
+  width:80%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #d6d0ff;
+  background:#faf9ff;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #E5E4D5;
-    border-radius: 10px;
+textarea{
+  height:100px;
+  resize:none;
 }
 
-/* Dark mode scrollbar handle */
-.dark ::-webkit-scrollbar-thumb {
-    background: #333;
+button{
+  padding:10px 25px;
+  border:none;
+  border-radius:20px;
+  background:#8b7cf6;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+  font-weight:500;
 }
 
-/* --- DARK MODE NEON GLOWS --- */
-
-/* Apply a glowing effect to the background doodles in dark mode */
-.dark .doodle-glow {
-    filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 15px currentColor);
+button:hover{
+  background:#6d5bd0;
+  transform:scale(1.05);
 }
 
-/* --- LAYOUT UTILITIES --- */
-
-/* Hide scrollbar utility for marquee while maintaining functionality */
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
+#response{
+  margin-top:10px;
+  color:#6d5bd0;
+  font-weight:500;
 }
 
-.no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-/* Global color and background transitions for smooth theme switching */
-.transition-colors {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 500ms;
+footer{
+  margin-top:40px;
+  padding:20px;
+  background:#e9e5ff;
+  color:#4b3f8f;
 }
